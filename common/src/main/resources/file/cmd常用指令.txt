@@ -1,0 +1,26 @@
+Redis：
+	生成Redis服务：redis-server --service-install redis.windows-service.conf --loglevel verbose
+	卸载服务:	redis-server --service-uninstall
+	开启服务: redis-server --service-start
+	停止服务: redis-server --service-stop
+	操作测试Redis: redis-cli.exe -h 127.0.0.1 -p 6379 创建一个地址为127.0.0.1 端口号为 6370的Redis数据库服务
+	获取所有的Key可以使用 keys * 清楚可以用命令 flushdb
+Solr:
+	生成监控：bin\solr.cmd start 默认生成的侦听端口8983 或者指定监控端口 bin\solr.cmd start -p 8801
+	停止运行：bin\solr.cmd stop -p 8801 停止某一个端口 或者全部停止 bin\solr.cmd stop -all
+	查看solr运行状态：bin\solr.cmd status
+	查看solr版本号：bin\solr.cmd version
+	创建核心：bin\solr.cmd create -c
+	删除核心：bin\solr.cmd delete -c
+
+MySQL:	
+	完成初始化：mysqld --initialize --user=mysql --console
+	安装服务：mysqld install
+	启动服务：net start mysqld
+	删除服务：sc delete mysql
+
+Maven:
+	跳过测试类打包：mvn clean install -Dmaven.test.skip=true
+
+jvm虚拟机：
+	查看虚拟机：jconsole

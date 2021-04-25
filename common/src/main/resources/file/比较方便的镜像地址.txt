@@ -1,0 +1,31 @@
+阿里的镜像
+<mirror>
+    <id>nexus-aliyun</id>
+    <name>Nexus aliyun</name>
+    <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    <mirrorOf>central</mirrorOf>
+</mirror>
+
+maven官方2号镜像
+<mirror>
+    <id>repo2</id>
+    <name>Mirror from Maven Repo2</name>
+    <url>http://repo2.maven.org/maven2/</url>
+    <mirrorOf>central</mirrorOf>
+</mirror>
+
+maven的UK镜像
+<mirror>
+    <id>ui</id>
+    <name>Mirror from UK</name>
+    <url>http://uk.maven.org/maven2/</url>
+    <mirrorOf>central</mirrorOf>
+</mirror>
+
+JBoss 镜像
+<mirror>
+    <id>jboss-public-repository-group</id>
+    <mirrorOf>central</mirrorOf>
+    <name>JBoss Public Repository Group</name>
+    <url>http://repository.jboss.org/nexus/content/groups/public</url>
+</mirror>
