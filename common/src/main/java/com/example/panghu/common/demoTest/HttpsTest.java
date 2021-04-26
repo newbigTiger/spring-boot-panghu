@@ -1,9 +1,9 @@
 package com.example.panghu.common.demoTest;
 
+import com.alibaba.fastjson.JSON;
 import com.example.panghu.common.controller.HttpClientUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-import sun.security.provider.MD5;
 
 import java.security.MessageDigest;
 import java.util.HashMap;
@@ -45,11 +45,15 @@ public class HttpsTest {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-//...
         String reqStr = rspObj.toString();
-        String s= HttpClientUtils
-                .httpsRequest(requestUrl,"GET",reqStr);
-        System.out.println(s);
+        Object parse = JSON.parse(HttpClientUtils
+                .httpsRequest(requestUrl, "POST", reqStr));
+
+        System.out.println((Map)parse);
+        Map<String,String> hashMapa = (Map)parse;
+        hashMapa.forEach((key, value) -> {
+            System.out.println(key + "    " + value);
+        });
     }
     /**
      * MD5 32位小写加密
