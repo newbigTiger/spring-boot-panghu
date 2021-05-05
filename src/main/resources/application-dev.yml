@@ -1,0 +1,47 @@
+#端口
+server:
+  port: 8080
+
+  #模板页面
+  #注释的部分是Thymeleaf默认的配置，如有其它需求可以自行更改
+  spring:
+    thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      mode: LEGACYHTML5
+  #      encoding: UTF-8
+  #      content-type: text/html
+
+##数据源一
+spring:
+  datasource:
+    username: root
+    password: 5475096a
+    url: jdbc:mysql://localhost:6006/school?serverTimezone=UTC
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+#spring-boot整合mybatis
+mybatis:
+  #config-location: classpath:/mapper/config/mybatisConfig.xml #可以注射掉,没用到该配置文件
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #type-aliases-package: com.xuan.entity
+jtw:
+  corePoolSize: 5
+  maximumPoolSize: 10
+  keepAliveTime: 1000
