@@ -19,7 +19,7 @@
         <!-- Used by MyBatis Generator to Generate Codes -->
         <!-- 运行命令: mvn mybatis-generator:generate -e -->
         <!--<classPathEntry.mysql.location>${basedir}/target/${project.artifactId}/WEB-INF/lib/mysql-connector-java-${mysql.connector.java.version}.jar</classPathEntry.mysql.location>-->
-        <classPathEntry.mysql.location>C:/Users/惠普/.m2/repository/mysql/mysql-connector-java/8.0.21</classPathEntry.mysql.location>
+        <classPathEntry.mysql.location>C:/Users/胖虎/.m2/repository/mysql/mysql-connector-java/8.0.21</classPathEntry.mysql.location>
         <javaModelGenerator.targetProject>${basedir}/src/main/java</javaModelGenerator.targetProject>
         <sqlMapGenerator.targetProject>${basedir}/src/main/resources</sqlMapGenerator.targetProject>
         <javaClientGenerator.targetProject>${basedir}/src/main/java</javaClientGenerator.targetProject>
@@ -33,6 +33,10 @@
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
     <!--整合web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,14 +134,11 @@
             <version>2.4</version>
             <classifier>jdk15</classifier>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <!-- mybatis generator 自动生成代码插件 -->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
