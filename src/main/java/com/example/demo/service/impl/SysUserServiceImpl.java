@@ -32,4 +32,27 @@ public class SysUserServiceImpl implements ISysUserService {
             throw new RuntimeException("数据库异常!");
         }
     }
+
+    @Override
+    public Map<String, Object> queryAssociation(Map<String, Object> paramMap) {
+
+        return sysUserMapper.queryAssociation(paramMap);
+    }
+
+    @Override
+    public Integer insertStores(List<Map<String, Object>> paramMap) {
+
+        return sysUserMapper.insertStores(paramMap);
+    }
+
+    @Override
+    public List<String> findShopOrderAssociationNumberBySoId(List<String> soIdList) {
+        return sysUserMapper.findShopOrderAssociationNumberBySoId(soIdList);
+    }
+
+    @Override
+    public Integer saveShopOrderAssociation(List<Map<String, Object>> mapList) {
+
+        return sysUserMapper.saveShopOrderAssociation(mapList);
+    }
 }

@@ -1,5 +1,8 @@
 package math;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 import java.util.*;
 
 /**
@@ -8,13 +11,9 @@ import java.util.*;
  */
 public class Demox {
     public static void main(String[] args) {
-        int num = 1;
-        change(num);
-        System.out.println(num);
-
-    }
-    public static  void change(int x){
-
-        x =2;
+        String a = "[123, 456,'dfsfsd']";
+        Map<String,Object>map = new HashMap<>();
+        map.put("so_ids",JSONArray.fromObject(a));
+        System.out.println(JSONObject.fromObject(map));
     }
 }

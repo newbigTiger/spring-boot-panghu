@@ -1,3 +1,12 @@
 spring:
   profiles:
     active: dev
+server:
+  port: 9103
+  servlet:
+    context-path: /
+swagger:
+  enabled: false
+  api:
+    scan:
+      packages: com.example.demo.controller

@@ -9,7 +9,7 @@
 
     <context id="mysqlTables" targetRuntime="MyBatis3">
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:6006/school?serverTimezone=UTC"
+                        connectionURL="jdbc:mysql://localhost:3306/semalldb?serverTimezone=UTC"
                         userId="root" password="5475096a">
         </jdbcConnection>
 
@@ -37,7 +37,7 @@
         <table tableName="live_course_channel" domainObjectName="LiveCourseChannel"></table>
 
         -->
-        <table tableName="sys_user" domainObjectName="SysUser"></table>
+        <table tableName="shop_order_association_pay" domainObjectName="ShopOrderAssociationPay"></table>
 
 
     </context>
