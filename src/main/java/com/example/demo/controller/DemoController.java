@@ -1,14 +1,16 @@
 package com.example.demo.controller;
 
+import com.example.demo.controller.request.DemoRequest;
 import com.example.demo.service.ISysUserService;
 import io.swagger.annotations.ApiOperation;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONNull;
 import net.sf.json.JSONObject;
 import org.apache.commons.collections.MapUtils;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +25,6 @@ import java.util.Map;
  * @date 2021/3/10 下午 9:55
  */
 @RestController
-@RequestMapping("/demo")
 public class DemoController {
 
     @Autowired
@@ -31,14 +32,9 @@ public class DemoController {
 
     @ApiOperation("测试一下下")
     @PostMapping(value = "/queryList")
-    public String getHello(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,@RequestBody Map<String,Object> paramMap){
+    public String getHello(@RequestBody DemoRequest demoRequest){
         try{
-            System.out.println(httpServletRequest.getHeaderNames());
-            System.out.println(httpServletRequest.getHeader("token"));
-            List<Map<String, Object>> mapList = iSysUserService.querySysUserList(paramMap);
-            System.out.println(mapList);
-            paramMap.put(null,"");
-            paramMap.put(null,"");
+
             return "hello";
         }catch (Exception ex){
             ex.printStackTrace();
