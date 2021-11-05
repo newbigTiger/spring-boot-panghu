@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>socket-demo</module>
+        <module>socket-client-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
